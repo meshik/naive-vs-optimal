@@ -1,19 +1,16 @@
-# arr1/arr2 are sorted integer arrays
-# arr1 has enough space appended to hold arr2
-# merge the arrays into arr1 in sorted order
+# merge & sort the arrays into arr1
 
-def naive_approach1(arr1, arr2):
-    for i in range(len(arr2)):
-        arr1.append(arr2[i])
-    return sorted(arr1)
+def naive_approach(arr1, arr2):
+    # Get the none-zero elements in arr1
+    m = len(arr1) - len(arr2)
+    # Copy arr2 to the end of arr1
+    arr1[m:] = arr2
 
-def naive_approach2(arr1, arr2):
-    arr1.extend(arr2)
-    return sorted(arr1)
+    arr1.sort()
 
 def optimal_approach(arr1, arr2):
     # get the length of integers
-    m = len(arr1) - len(arr2)  # m is the number of integers in arr1
+    m = len(arr1) - len(arr2) 
     n = len(arr2)
     
     # start from the end of each array
