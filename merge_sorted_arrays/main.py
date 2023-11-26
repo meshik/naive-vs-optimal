@@ -1,11 +1,11 @@
 # merge & sort the arrays into arr1
 
 def naive_approach(arr1, arr2):
-    # Get the none-zero elements in arr1
+    # get the none-zero elements in arr1
     m = len(arr1) - len(arr2)
-    # Copy arr2 to the end of arr1
+    # copy arr2 to the end of arr1
     arr1[m:] = arr2
-
+    # sort everything
     arr1.sort()
 
 def optimal_approach(arr1, arr2):
