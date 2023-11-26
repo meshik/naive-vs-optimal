@@ -5,7 +5,7 @@ def naïve_approach(arr1, arr2):
     # copy arr2 to the end of arr1
     arr1[m:] = arr2
     # sort everything
-    arr1.sort()
+    arr1.sort()  # Timsort
     # cry
     return "This is O(n*log(n)) :("
 
