@@ -1,36 +1,29 @@
 def naïve_approach(nums, val):
-    
-    # Initialize an empty list for non-val elements
-    non_val_elements = []
-    
     # Loop through each element in nums
-    for num in nums:
-        # If element is not val, add it to non_val_elements
-        if num != val:
-            non_val_elements.append(num)
-    
-    # Copy non-val elements back to nums
-    nums[:len(non_val_elements)] = non_val_elements
-    
-    # Return the count of non-val elements
-    # return len(non_val_elements)
-    
-    
-
-    ########################################
-    for num in nums:
-        if num == val:
-            nums.remove(num)
-    
-    ########################################
     for num in nums.copy():
+        # If element is val
         if num == val:
+            # Remove it
             nums.remove(num)
-    
-    ########################################
-    nums[:] = [num for num in nums if num != val]
-    
     return len(nums)
+# O(n^2) time and O(n) space
+
+
+def naïve_approach_v2(nums, val):
+    # Repeat until no more val found
+    while val in nums:
+        # Remove first occurrence of val
+        nums.remove(val)
+    # Return length of modified list
+    return len(nums)
+# O(n^2) time and O(1) space
+
+
+def naïve_approach_v3(nums, val):
+    # recreate nums with only non-val elements
+    nums[:] = [num for num in nums if num != val]
+    return len(nums)
+# O(n) time and O(n) space
 
     
 def optimal_approach(nums, val):
@@ -46,8 +39,7 @@ def optimal_approach(nums, val):
             # Increment pointer index
             pointer += 1
     
-    # Return the count of elements not equal to val
     return pointer
-
+# O(n) time and O(1) space = $$GET RICH$$
     
 
