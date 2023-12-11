@@ -1,42 +1,42 @@
 def naïve_approach(nums, val):
-    # Loop through each element in nums
+    # loop through each element in nums
     for num in nums.copy():
-        # If element is val
+        # if element is val
         if num == val:
-            # Remove it
-            nums.remove(num)
+            # remove it
+            nums.remove(num)  # O(n) runtime
     return len(nums)
-# O(n^2) time and O(n) space
-
+# O(n) space
+# O(n^2) time
 
 def naïve_approach_v2(nums, val):
-    # Repeat until no more val found
+    # repeat until no more val found
     while val in nums:
-        # Remove first occurrence of val
-        nums.remove(val)
-    # Return length of modified list
+        # remove an occurrence of val
+        nums.remove(val)  # O(n) runtime
+    # return length of modified list
     return len(nums)
-# O(n^2) time and O(1) space
-
+# O(1) space
+# O(n^2) time
 
 def naïve_approach_v3(nums, val):
     # recreate nums with only non-val elements
     nums[:] = [num for num in nums if num != val]
     return len(nums)
-# O(n) time and O(n) space
-
+# O(n) time :D
+# O(n) space :'(
     
 def optimal_approach(nums, val):
-    # Initialize start index for the modified array
+    # initialize pointer for nums
     pointer = 0
     
-    # Loop through each element in nums
+    # loop through each element in nums
     for num in nums:
-        # If element is not val
+        # if element is not val
         if num != val:
-            # Place it at the pointer index
+            # place it at the pointer
             nums[pointer] = num
-            # Increment pointer index
+            # increment pointer
             pointer += 1
     
     return pointer
