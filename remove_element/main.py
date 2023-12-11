@@ -1,5 +1,5 @@
 def naïve_approach(nums, val):
-    # loop through each element in nums
+    # loop through nums
     for num in nums.copy():
         # if element is val
         if num == val:
@@ -7,7 +7,7 @@ def naïve_approach(nums, val):
             nums.remove(num)  # O(n) runtime
     return len(nums)
 # O(n) space
-# O(n^2) time
+# O(n^2) time :O
 
 def naïve_approach_v2(nums, val):
     # repeat until no more val found
@@ -17,7 +17,7 @@ def naïve_approach_v2(nums, val):
     # return length of modified list
     return len(nums)
 # O(1) space
-# O(n^2) time
+# O(n^2) time :O
 
 def naïve_approach_v3(nums, val):
     # recreate nums with only non-val elements
