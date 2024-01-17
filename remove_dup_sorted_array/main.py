@@ -1,42 +1,42 @@
-def naïve_approach_v1(nums: list):
+def naïve_approach_v1(sins: list):
     # store unique elements
-    unique_nums = []
+    unique_sins = []
 
     # iterate through the array
-    for num in nums:
-        if num not in unique_nums:
-            # add 'num' to unique_nums
-            unique_nums.append(num)
+    for sin in sins:
+        if sin not in unique_sins:
+            # add 'sin' to unique_sins
+            unique_sins.append(sin)
 
-    # set nums to unique_nums
-    nums = unique_nums
+    # set sins to unique_sins
+    sins = unique_sins
     # return number of unique elements
-    return len(nums)
+    return len(sins)
 # time complexity: O(n^2) - loop + 'in' operator
-# space complexity: O(n) -  unique_nums list
+# space complexity: O(n) -  unique_sins list
 
 
-def naïve_approach_v2(nums: list):
+def naïve_approach_v2(sins: list):
     # initialize index
     index = 0
     
     # loop through the whole array
-    while index < len(nums) - 1:
+    while index < len(sins) - 1:
         
-        if nums[index] == nums[index + 1]:
+        if sins[index] == sins[index + 1]:
             # remove the duplicate
-            nums.pop(index + 1)
+            sins.pop(index + 1)
         else:
             # keep advancing
             index += 1
             
-    # return final length of 'nums'
-    return len(nums)
+    # return final length of 'sins'
+    return len(sins)
 # time complexity: O(n^2) - loop + 'pop' method
 # space complexity: O(1) - perfect
 
 
-def optïmal_solution(nums: list):
+def optïmal_solution(sins: list):
     # initialize 2 pointers:
     # track unique elements
     unique_p = 0
@@ -44,13 +44,13 @@ def optïmal_solution(nums: list):
     advancing_p = 1
 
     # iterate through the array
-    while advancing_p < len(nums):
+    while advancing_p < len(sins):
         
         # check if pointed elements are the same
-        if nums[unique_p] != nums[advancing_p]:
+        if sins[unique_p] != sins[advancing_p]:
             # assign new element as the next unique
             unique_p += 1
-            nums[unique_p] = nums[advancing_p]
+            sins[unique_p] = sins[advancing_p]
             
         advancing_p += 1
 
