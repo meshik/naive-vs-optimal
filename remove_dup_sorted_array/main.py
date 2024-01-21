@@ -58,4 +58,4 @@ def optïmal_solution(sins: list):
     return unique_p + 1
 # time complexity: O(n) - loop
 # space complexity: O(1) - perfect
-# life complexity: OH(YEA!)
+# post-life complexity: OH(YEA!)
